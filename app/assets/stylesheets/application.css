@@ -1,0 +1,139 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+/* Style the form container */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style the form labels */
+  form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Style the form input fields */
+  form input[type="text"],
+  form textarea,
+  form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Style the submit button */
+  form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  /* Hover effect for the submit button */
+  form input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Optional: Add a slight gap between the form elements */
+  form input[type="text"],
+  form textarea,
+  form input[type="file"] {
+    margin-bottom: 20px;
+  }
+  
+  /* Optional: Style the textarea for a more professional look */
+  form textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+  
+
+
+  /* Style the main container for the dashboard */
+.dashboard-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f4f4f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style the page title */
+  .dashboard-container h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  /* Style each individual message */
+  .message {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  /* Add a hover effect to the message */
+  .message:hover {
+    background-color: #f9f9f9;
+    transform: translateY(-5px);
+  }
+  
+  /* Style for the title and body */
+  .message p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  
+  .message p strong {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Style for attached images */
+  .message img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 15px;
+  }
+  
+  /* Optional: Add spacing between message blocks */
+  .message + .message {
+    margin-top: 20px;
+  }
+  

@@ -1,0 +1,14 @@
+<div class="dashboard-container">
+  <h1>User Dashboard - Messages</h1>
+  <% @messages.each do |msg| %>
+    <div class="message">
+      <p><strong>Title:</strong> <%= msg.title %></p>
+      <p><strong>Body:</strong> <%= msg.body %></p>
+      <% if msg.image.attached? %>
+        <%= image_tag msg.image %>
+      <% end %>
+    </div>
+     <p><strong>Status:</strong> <%= msg.status %></p>
+  
+  <% end %>
+</div>
