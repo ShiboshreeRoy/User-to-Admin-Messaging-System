@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Casinogames" %>
+
+<h1>Casinogames</h1>
+
+<div id="casinogames">
+  <% @casinogames.each do |casinogame| %>
+    <%= render casinogame %>
+    <p>
+      <%= link_to "Show this casinogame", casinogame %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New casinogame", new_casinogame_path %>

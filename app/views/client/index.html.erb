@@ -1,0 +1,138 @@
+
+<div class="bg-gray-100">
+  <div class="max-w-md mx-auto overflow-hidden mt-11">
+   <div class="bg-blue-600 p-4 mt-5 text-white text-center">
+    <h1 class="text-xl font-semibold">
+     Personal Info
+    </h1>
+    <button class="absolute top-4 right-4 text-white">
+     <i class="fas fa-times">
+     </i>
+    </button>
+   </div>
+   <div class="relative">
+    <img alt="Background with soccer balls" class="w-full h-32 object-cover" height="200" src="https://storage.googleapis.com/a1aa/image/1qCoilPuZ5q43UZDCzGG0LhC3iplrgIjI_XpbRcV-u4.jpg" width="600"/>
+    <div class="absolute inset-0 flex items-center justify-center">
+     <div class="bg-white rounded-full p-2">
+      <img alt="User avatar" class="rounded-full" height="100" src="https://storage.googleapis.com/a1aa/image/_r8EA64QqPG5385-Spz23YlDp2q_f8Qz0rSYEuH2zfk.jpg" width="100"/>
+     </div>
+    </div>
+   </div>
+   <div class="text-center mt-12">
+    <h2 class="text-lg font-semibold">
+    <% if user_signed_in?%>
+        <%= current_user.email.split('@').first.capitalize %>
+    <% end %>
+     <span class="bg-gray-300 text-gray-700 text-xs px-2 py-1 rounded">
+      Bronze
+     </span>
+    </h2>
+    <p class="text-gray-500">
+     Date Registered : <%= current_user.created_at.strftime("%B %d, %Y") %></p>
+    </p>
+   </div>
+   <div class="flex justify-between items-center bg-gray-100 p-4 mt-4">
+    <div>
+     <p class="text-gray-500">
+      Gift Points
+     </p>
+     <p class="text-blue-500 text-xl font-semibold">
+      <%= @points %> 
+     </p>
+    </div>
+    <div class="flex items-center">
+     <p class="text-gray-500 mr-2">
+      My Gift Points
+     </p>
+     <i class="fas fa-chevron-right text-gray-500">
+     </i>
+    </div>
+   </div>
+   <div class="p-4">
+    <div class="flex items-center mb-4">
+     <i class="fas fa-user text-blue-600 mr-2">
+     </i>
+     <div>
+      <p class="text-gray-500">
+       Full Name
+      </p>
+      <p class="text-gray-900">
+      <% if user_signed_in?%>
+        <%= current_user.email.split('@').first.capitalize %>
+      <% end %>
+      </p>
+     </div>
+    </div>
+    <div class="flex items-center mb-4">
+     <i class="fas fa-birthday-cake text-blue-600 mr-2">
+     </i>
+     <div>
+      <p class="text-gray-500">
+       Birthday
+      </p>
+      <p class="text-gray-900">
+       <% if @dob %>
+         <%= @dob %></p>
+        <% else %>
+        <p>No Date of Birth available.</p>
+    <% end %>
+      </p>
+     </div>
+    </div>
+    <div class="flex items-center mb-4">
+     <i class="fas fa-phone text-blue-600 mr-2">
+     </i>
+     <div class="flex-1">
+      <p class="text-gray-500">
+       Phone Number
+      </p>
+      <div class="flex items-center">
+       <p class="text-gray-900 mr-2">
+       <% if user_signed_in?%>
+        +88<%= current_user.phone_number %>
+      <% end %>
+        
+       </p>
+       <span class="bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded">
+        Default
+       </span>
+       <span class="text-green-500 ml-2">
+        Verified
+       </span>
+      </div>
+     </div>
+    </div>
+    <div class="flex items-center mb-4">
+    <i class="fas fa-envelope text-blue-600 mr-2"></i>
+     </i>
+     <div class="flex-1">
+      <p class="text-gray-500">
+       Email Address
+      </p>
+      <div class="flex items-center">
+       <p class="text-gray-900 mr-2">
+       <% if user_signed_in?%>
+        <%= current_user.email %>
+      <% end %>
+        
+       </p>
+       <span class="bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded">
+        Default
+       </span>
+       <span class="text-green-500 ml-2">
+        Verified
+       </span>
+      </div>
+     </div>
+    </div>
+    <div class="flex items-center">
+     <button class="flex items-center border border-gray-300 rounded p-2">
+      <i class="fas fa-plus text-gray-500 mr-2">
+      </i>
+      <%= link_to "Add", edit_user_registration_path, class: "text-green-500 font-bold py-2 px-4 rounded" %>
+
+     </button>
+    </div>
+   </div>
+  </div>
+ </div>

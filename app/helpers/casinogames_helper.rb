@@ -1,0 +1,2 @@
+module CasinogamesHelper
+end

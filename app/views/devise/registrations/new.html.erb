@@ -1,0 +1,76 @@
+<div class="bg-gray-100 mt-5 mb-5 flex items-center justify-center min-h-screen">
+<div class="bg-white mt-5 rounded-lg shadow-lg w-full max-w-md">
+   <div class="bg-blue-600 text-white text-center py-4 rounded-t-lg">
+    <h2 class="text-xl font-semibold">
+     Sign up
+    </h2>
+   </div>
+    <div class="p-4">
+    <div class="flex justify-center mb-4">
+     <img alt="CRICKEX logo" height="50" src="https://storage.googleapis.com/a1aa/image/rk26cDVH92Nti9JteMttEfqd0--OwVkjkbQf929XElc.jpg" width="150"/>
+    </div>
+    <div class="flex overflow-x-auto mb-4">
+     <img alt="Promotional image 1" class="w-full h-auto" height="100" src="https://storage.googleapis.com/a1aa/image/jcKP3L1oQLpY4-74EcRNKhWH8hvChmzUU3Y3ldMcLxM.jpg" width="300"/>
+     <img alt="Promotional image 2" class="w-full h-auto" height="100" src="https://storage.googleapis.com/a1aa/image/xBNCnxEwKi4utT_VurqNWIVAEyk9mFyNiOc6zI-3Mfk.jpg" width="300"/>
+     <img alt="Promotional image 3" class="w-full h-auto" height="100" src="https://storage.googleapis.com/a1aa/image/TigA7YZY_HtQZxQnT2sEOPBuDWbhOCYnLQlueDYGd7k.jpg" width="300"/>
+    </div>
+    <div class="flex justify-center mb-4">
+     <div class="flex space-x-2">
+      <div class="w-2 h-2 bg-gray-400 rounded-full">
+      </div>
+      <div class="w-2 h-2 bg-gray-400 rounded-full">
+      </div>
+      <div class="w-2 h-2 bg-gray-400 rounded-full">
+      </div>
+     </div>
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 mb-2">
+       Choose currency
+      </label>
+      <div class="relative">
+       <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+        <option>
+         BDT
+        </option>
+       </select>
+       <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+        <svg class="fill-current h-4 w-4" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+         <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z">
+         </path>
+        </svg>
+       </div>
+      </div>
+     </div>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="mb-4">
+    <%= f.label :email, class: "block text-gray-700 mb-2" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+  </div>
+  <div class="mb-4">
+  <%= f.label :phone_number, class: "block text-gray-700 mb-2" %><br>
+  <%= f.text_field :phone_number, required: true,class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+</div>
+
+  <div class="field">
+    <%= f.label :password ,class: "block text-gray-700 mb-2"%>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+  </div>
+
+  <div class="mb-4">
+    <%= f.label :password_confirmation , class: "block text-gray-700 mb-2"%><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up",class: "bg-green-500 text-white font-bold py-2 px-4 rounded opacity-50 cursor-pointer" %>
+  </div>
+<% end %>
+
+</div>

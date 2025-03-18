@@ -1,7 +1,18 @@
 Rails.application.routes.draw do
+  resources :casinogames
+ 
+
+  resources :admin
+  resources :client do
+    collection do
+      get "client/deposit", to: "client#deposit", as: "deposit"
+    end
+  end
+ 
+
   devise_for :users
-  root 'messages#new'
-  resources :messages, only: [:new, :create, :index] do
+  #root 'messages#new'
+  resources :messages, only: [:new, :create, :index, :destroy, :show] do
     member do
        get 'update_status'
     end
@@ -18,5 +29,5 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   # Defines the root path route ("/")
-  # root "posts#index"
+   root "home#index"
 end

@@ -1,0 +1,96 @@
+<div class="bg-gray-100">
+  <div class="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden mt-10">
+    <div class="bg-blue-700 p-4 text-center text-white">
+      <h1 class="text-xl font-semibold">Funds</h1>
+    </div>
+    
+    <div class="flex justify-center bg-blue-600">
+      <button class="w-1/2 py-2 text-white bg-blue-500">Deposit</button>
+      <button class="w-1/2 py-2 text-white bg-blue-800">Withdrawal</button>
+    </div>
+    
+    <div class="bg-yellow-500 p-2 text-center text-white flex items-center justify-between">
+      <i class="fas fa-cog"></i>
+      <span class="text-sm">Select Promotion ৩.৫% আনলিমিটেড ডিপ...</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    
+    <div class="p-4">
+      <div class="mb-4">
+        <h2 class="text-lg font-semibold">Select Payment Method</h2>
+        <select class="w-full p-2 border rounded mt-2 bg-white">
+          <option selected disabled>Choose a payment method</option>
+          <option value="bKash">bKash (+3.5%)</option>
+          <option value="Nagad">Nagad (+3.5%)</option>
+          <option value="Rocket">Rocket (+3.5%)</option>
+          <option value="UPay">UPay (+3.5%)</option>
+          <option value="Local Bank">Local Bank (+3.5%)</option>
+          <option value="USDT TRC20">USDT TRC20</option>
+          <option value="USDT ERC20">USDT ERC20</option>
+        </select>
+      </div>
+
+      <div class="mb-4">
+        <h2 class="text-lg font-semibold">Payment Method</h2>
+        <div class="grid grid-cols-3 gap-2 mt-2">
+          <div class="border p-2 rounded flex flex-col items-center justify-center">
+            <img src="https://storage.googleapis.com/a1aa/image/ORz5MyHX9FiwOIAL7QEqA2EEAhC46ot9eN_FpixFX3Y.jpg" alt="bKash logo" class="mb-2" width="50" height="50"/>
+            <span class="text-sm">bKash</span>
+            <span class="text-xs text-red-500">+3.5%</span>
+          </div>
+          <div class="border p-2 rounded flex flex-col items-center justify-center">
+            <img src="https://storage.googleapis.com/a1aa/image/lD6M39FEemABJOWBp99tMqsNLCgTTH6s2nmYJyR5WUs.jpg" alt="Nagad logo" class="mb-2" width="50" height="50"/>
+            <span class="text-sm">Nagad</span>
+            <span class="text-xs text-red-500">+3.5%</span>
+          </div>
+          <div class="border p-2 rounded flex flex-col items-center justify-center">
+            <img src="https://storage.googleapis.com/a1aa/image/5u06WSL-bcx9Ejso8xiI4KpTq8xNVJ27HgP5ltQHIfk.jpg" alt="Rocket logo" class="mb-2" width="50" height="50"/>
+            <span class="text-sm">Rocket</span>
+            <span class="text-xs text-red-500">+3.5%</span>
+          </div>
+          <div class="border p-2 rounded flex flex-col items-center justify-center">
+            <img src="https://storage.googleapis.com/a1aa/image/smL_fJZ23Zb1IpIxLORtPfAxMtOH8mSUY5sFBTrSP0U.jpg" alt="UPay logo" class="mb-2" width="50" height="50"/>
+            <span class="text-sm">UPay</span>
+            <span class="text-xs text-red-500">+3.5%</span>
+          </div>
+          <div class="border p-2 rounded flex flex-col items-center justify-center">
+            <img src="https://storage.googleapis.com/a1aa/image/1FbrlD6jOFeQHq__hP1SK6-CJYSm7WYtMi5mWo0HNX4.jpg" alt="Local Bank logo" class="mb-2" width="50" height="50"/>
+            <span class="text-sm">Local Bank</span>
+            <span class="text-xs text-red-500">+3.5%</span>
+          </div>
+          <div class="border p-2 rounded flex flex-col items-center justify-center">
+            <img src="https://storage.googleapis.com/a1aa/image/zQRSdPbInm5AfQZIniNoQuy_pxsBxxQ-JJiVO0ciHaE.jpg" alt="USDT TRC20 logo" class="mb-2" width="50" height="50"/>
+            <span class="text-sm">USDT TRC20</span>
+          </div>
+          <div class="border p-2 rounded flex flex-col items-center justify-center col-span-3">
+            <img src="https://storage.googleapis.com/a1aa/image/4tjX8fwJ72P-t9VbNQjkKf8yrgVHnxPwd8Xce0G-zUU.jpg" alt="USDT ERC20 logo" class="mb-2" width="50" height="50"/>
+            <span class="text-sm">USDT ERC20</span>
+          </div>
+        </div>
+      </div>
+      
+     
+      <%= link_to"bKash Payment",new_message_path,class: "w-full py-2 px-4 bg-blue-600 text-white rounded"%>
+    </div>
+
+    <div class="p-4">
+      <div class="mb-4">
+        <h2 class="text-lg font-semibold">Deposit Channel</h2>
+        <div class="grid grid-cols-2 gap-2 mt-2">
+          <div class="border p-2 rounded flex flex-col items-center justify-center">
+            <span class="text-sm">Jpay</span>
+          </div>
+          <div class="border p-2 rounded flex flex-col items-center justify-center">
+            <span class="text-sm">Autopay</span>
+          </div>
+          <div class="border p-2 rounded flex flex-col items-center justify-center">
+            <span class="text-sm">Cashthru</span>
+          </div>
+          <div class="border p-2 rounded flex flex-col items-center justify-center">
+            <span class="text-sm">সেন্ড মানি</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
