@@ -30,9 +30,15 @@
       
       
       <%= form_with(model: @message, local: true, class: "space-y-6") do |form| %>
-      <h2 class="text-center text-lg font-medium text-white mb-4">Number:<%= @number.presence || "No number available" %></h2>
-        
-        <!-- Payment Method -->
+      <div class="flex mb-4 justify-center items-center gap-4">
+  <h2 class="text-center text-lg font-medium text-white mb-4">
+    Number: <span id="agent-number"><%= @number %></span>
+  </h2>
+
+  <button onclick="copyToClipboard()" class="bg-blue-500 me-2 text-white px-3 py-1 rounded">Copy</button>
+</div>
+
+    <!-- Payment Method -->
         <div>
           <%= form.label :payment_method, "Payment Method", class: "block text-lg font-medium text-gray-200" %>
           <div class="grid grid-cols-2 gap-4">
@@ -137,4 +143,21 @@
 
     amountSelect.addEventListener('change', updateBodyField);
   });
+</script>
+
+<script>
+  function copyToClipboard() {
+    const numberElement = document.getElementById("agent-number");
+    const numberText = numberElement.textContent.trim();
+
+    if (numberText !== "No number available") {
+      navigator.clipboard.writeText(numberText).then(() => {
+        alert("Number copied successfully!");
+      }).catch(err => {
+        console.error("Failed to copy:", err);
+      });
+    } else {
+      alert("No number available to copy.");
+    }
+  }
 </script>
