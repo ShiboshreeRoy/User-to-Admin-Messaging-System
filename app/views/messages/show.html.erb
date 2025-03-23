@@ -1,2 +1,18 @@
 
+<div class="max-w-lg mx-auto bg-white p-8 rounded-xl shadow-xl border border-gray-200">
+  <h2 class="text-3xl font-semibold text-gray-800 text-center mb-6">Deposit Details</h2>
 
+  <p class="text-lg"><strong>Transaction:</strong> <%= @message.title %></p>
+  <p class="text-lg"><strong>Amount:</strong> $<%= @message.amount %></p>
+  <p class="text-lg"><strong>Status:</strong> <%= @message.status.capitalize %></p>
+<p class="text-lg"><strong>Status:</strong> <%= @message.number %></p>
+  <% if @message.image.attached? %>
+    <p class="mt-4"><strong>Screenshot:</strong></p>
+    <%= image_tag @message.image, class: "mt-2 w-full rounded-lg border" %>
+  <% end %>
+
+  <div class="mt-6 flex justify-between">
+    <%= link_to "Back", messages_path, class: "text-blue-500 hover:underline" %>
+    <%= link_to "Delete", message_path(@message), method: :delete, data: { confirm: "Are you sure?" }, class: "text-red-500 hover:underline" %>
+  </div>
+</div>

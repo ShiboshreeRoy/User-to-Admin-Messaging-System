@@ -5,7 +5,7 @@ class ClientController < ApplicationController
     @points = calculate_points
   end
 
-  def deposit  # FIXED: Changed from `diposit` to `deposit`
+  def widthdraw  # FIXED: Changed from `diposit` to `deposit`
   end
 
   def show

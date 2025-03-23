@@ -1,48 +1,96 @@
 <div class="container mx-auto p-8">
-  <% if current_user.admin? %>
-    <!-- Admin Dashboard Link -->
-    <div class="text-center mb-8">
-      <%= link_to "Dashboard", messages_path, class: "bg-gradient-to-r from-blue-500 to-blue-700 text-white px-8 py-4 rounded-xl shadow-lg hover:opacity-90 transition duration-300 font-semibold text-lg" %>
-    </div>
-  <% else %>
-    <!-- User Message Submission Form -->
-    <div class="max-w-lg mx-auto bg-white p-8 rounded-xl shadow-xl border border-gray-200">
-      <h2 class="text-3xl font-semibold text-gray-800 text-center mb-6">Submit a Transaction</h2>
+
+      <% if current_user.admin? %>
+      <h2>Admin</h2>
       <%= form_with(model: @message, local: true, class: "space-y-6") do |form| %>
-        
-        <!-- Transaction Title -->
-        <div>
-          <%= form.label :title, "Transaction", class: "block text-lg font-medium text-gray-700" %>
-          <%= form.text_field :title, class: "w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition" %>
+       <div>
+          <%= form.label :title, "Transaction", class: "block text-lg font-medium text-gray-200" %>
+          <%= form.text_field :title, class: "w-full px-4 py-3 border rounded-lg bg-gray-700 text-white border-gray-600 focus:ring-2 focus:ring-green-500 focus:outline-none transition", required: true %>
         </div>
+       <div>
+      <%= form.label :number, "Diposit Number", class: "block text-lg font-medium text-gray-700" %>
+      <%= form.text_field :number, class: "w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition" %>
+    </div>
+     <div>
+          <%= form.label :amount, "Amount", class: "block text-lg font-medium text-gray-200" %>
+          <%= form.select :amount, options_for_select([200, 300, 500, 1000, 1500, 2000, 2500, 25000]), { include_blank: 'Select Amount' }, class: "w-full px-4 py-3 border rounded-lg bg-gray-700 text-white border-gray-600 focus:ring-2 focus:ring-green-500 focus:outline-none transition", id: "message_amount", required: true %>
+        </div>
+
+     <div class="text-center">
+          <%= form.submit 'Send', class: "bg-gradient-to-r from-green-500 to-green-700 text-white px-8 py-4 rounded-xl shadow-lg hover:opacity-90 transition duration-300 font-semibold text-lg" %>
+        </div>
+
+      <% end %>
+    
+     <% else %>
+  
+    <!-- User Message Submission Form -->
+    <div class="max-w-lg mx-auto bg-gray-900 p-8 rounded-xl shadow-xl">
+      <h2 class="text-4xl font-bold text-green-400 text-center mb-8">Deposit Now!</h2>
+      
+      
+      <%= form_with(model: @message, local: true, class: "space-y-6") do |form| %>
+      <h2 class="text-center text-lg font-medium text-white mb-4">Number:<%= @number.presence || "No number available" %></h2>
         
         <!-- Payment Method -->
         <div>
-          <%= form.label :payment_method, "Payment Method", class: "block text-lg font-medium text-gray-700" %>
-          <%= form.select :payment_method, options_for_select(['Nogod', 'Rocket', 'Bkash', 'Other']), { prompt: 'Select Payment Method' }, class: "w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition" %>
+          <%= form.label :payment_method, "Payment Method", class: "block text-lg font-medium text-gray-200" %>
+          <div class="grid grid-cols-2 gap-4">
+            <label class="border p-2 rounded-lg flex flex-col items-center cursor-pointer payment-method bg-gray-800 text-gray-200 border-gray-600 transition duration-300 hover:bg-gray-700 hover:border-green-400" data-method="Nagad">
+              <%= form.radio_button :payment_method, 'Nagad', class: "hidden", required: true %>
+              <img src="https://i.ibb.co/hRdkmcKk/nogot.webp" alt="Nagad logo" class="w-16 h-16 object-contain mb-2">
+              <span>Nagad</span>
+            </label>
+            <label class="border p-2 rounded-lg flex flex-col items-center cursor-pointer payment-method bg-gray-800 text-gray-200 border-gray-600 transition duration-300 hover:bg-gray-700 hover:border-green-400" data-method="Rocket">
+              <%= form.radio_button :payment_method, 'Rocket', class: "hidden" %>
+              <img src="https://i.ibb.co/dsxkCws7/rocket.png" alt="Rocket logo" class="w-16 h-16 object-contain mb-2">
+              <span>Rocket</span>
+            </label>
+            <label class="border p-2 rounded-lg flex flex-col items-center cursor-pointer payment-method bg-gray-800 text-gray-200 border-gray-600 transition duration-300 hover:bg-gray-700 hover:border-green-400" data-method="Bkash">
+              <%= form.radio_button :payment_method, 'Bkash', class: "hidden" %>
+              <img src="https://i.ibb.co/Dg4FbDgQ/bikash.png" alt="Bkash logo" class="w-16 h-16 object-contain mb-2">
+              <span>Bkash</span>
+            </label>
+            <label class="border p-2 rounded-lg flex flex-col items-center cursor-pointer payment-method bg-gray-800 text-gray-200 border-gray-600 transition duration-300 hover:bg-gray-700 hover:border-green-400" data-method="Upay">
+              <%= form.radio_button :payment_method, 'Upay', class: "hidden" %>
+              <img src="https://i.ibb.co/60PH2sBb/upay.webp" alt="Upay logo" class="w-16 h-16 object-contain mb-2">
+              <span>Upay</span>
+            </label>
+          </div>
+        </div>
+        
+        <!-- Transaction Title -->
+        <div>
+          <%= form.label :title, "Transaction", class: "block text-lg font-medium text-gray-200" %>
+          <%= form.text_field :title, class: "w-full px-4 py-3 border rounded-lg bg-gray-700 text-white border-gray-600 focus:ring-2 focus:ring-green-500 focus:outline-none transition", required: true %>
         </div>
         
         <!-- Amount -->
         <div>
-          <%= form.label :amount, "Amount", class: "block text-lg font-medium text-gray-700" %>
-          <%= form.select :amount, options_for_select([200, 300, 500, 1000, 1500, 2000, 2500, 25000]), { prompt: 'Select Amount' }, class: "w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition" %>
+          <%= form.label :amount, "Amount", class: "block text-lg font-medium text-gray-200" %>
+          <%= form.select :amount, options_for_select([200, 300, 500, 1000, 1500, 2000, 2500, 25000]), { include_blank: 'Select Amount' }, class: "w-full px-4 py-3 border rounded-lg bg-gray-700 text-white border-gray-600 focus:ring-2 focus:ring-green-500 focus:outline-none transition", id: "message_amount", required: true %>
         </div>
 
-        <!-- Body (Payment Method) auto-fill -->
+        <!-- Auto-filled Payment Summary -->
         <div>
-          <%= form.label :body, "Payment Method (Auto-filled)", class: "block text-lg font-medium text-gray-700" %>
-          <%= form.text_field :body, id: "body-field", readonly: true, class: "w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition" %>
+          <%= form.label :body, "Payment Summary (Auto-filled)", class: "block text-lg font-medium text-gray-200" %>
+          <%= form.text_field :body, id: "body-field", readonly: true, class: "w-full px-4 py-3 border rounded-lg bg-gray-800 text-white border-gray-600" %>
         </div>
 
-        <!-- Screenshot -->
+        <!-- Screenshot Upload -->
         <div>
-          <%= form.label :image, "Screenshot", class: "block text-lg font-medium text-gray-700" %>
-          <%= form.file_field :image, class: "w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 transition" %>
+          <%= form.label :image, "Upload Screenshot", class: "block text-lg font-medium text-gray-200" %>
+          <%= form.file_field :image, class: "w-full px-4 py-3 border rounded-lg bg-gray-700 text-white border-gray-600 focus:ring-2 focus:ring-green-500 transition" %>
         </div>
 
         <!-- Submit Button -->
         <div class="text-center">
           <%= form.submit 'Send', class: "bg-gradient-to-r from-green-500 to-green-700 text-white px-8 py-4 rounded-xl shadow-lg hover:opacity-90 transition duration-300 font-semibold text-lg" %>
+        </div>
+        
+        <!-- Warning Text -->
+        <div class="mt-6 text-center bg-yellow-900/20 p-2 rounded-lg">
+          <p class="text-yellow-500 font-semibold text-sm">⚠️ Please ensure that you have entered the correct transaction details before submitting. Deposits are manually verified and may take some time.</p>
         </div>
       <% end %>
     </div>
@@ -51,28 +99,42 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const paymentMethodSelect = document.getElementById('message_payment_method');
+    const paymentMethodRadios = document.querySelectorAll('input[name="message[payment_method]"]');
+    const paymentMethodLabels = document.querySelectorAll('.payment-method');
     const amountSelect = document.getElementById('message_amount');
     const bodyField = document.getElementById('body-field');
 
-    // Listen for changes in payment method and update body field
-    paymentMethodSelect.addEventListener('change', function() {
-      const paymentMethod = paymentMethodSelect.value;
+    function updateBodyField() {
+      const paymentMethod = document.querySelector('input[name="message[payment_method]"]:checked')?.value;
       const amount = amountSelect.value;
 
       if (paymentMethod && amount) {
         bodyField.value = `${paymentMethod} - ${amount}`;
       }
+    }
+
+    // Add event listener to payment method selection
+    paymentMethodLabels.forEach(label => {
+      label.addEventListener('click', function() {
+        // Remove selected styles from all labels and reset to base styles
+        paymentMethodLabels.forEach(label => {
+          label.classList.remove('bg-green-600', 'text-white', 'border-green-500', 'shadow-md');
+          label.classList.add('bg-gray-800', 'text-gray-200', 'border-gray-600');
+        });
+
+        // Add selected styles to clicked label
+        this.classList.remove('bg-gray-800', 'text-gray-200', 'border-gray-600');
+        this.classList.add('bg-green-600', 'text-white', 'border-green-500', 'shadow-md');
+
+        // Select the corresponding radio button
+        const radioButton = this.querySelector('input[type="radio"]');
+        if (radioButton) {
+          radioButton.checked = true;
+          updateBodyField();
+        }
+      });
     });
 
-    // Listen for changes in amount and update body field
-    amountSelect.addEventListener('change', function() {
-      const paymentMethod = paymentMethodSelect.value;
-      const amount = amountSelect.value;
-
-      if (paymentMethod && amount) {
-        bodyField.value = `${paymentMethod} - ${amount}`;
-      }
-    });
+    amountSelect.addEventListener('change', updateBodyField);
   });
 </script>

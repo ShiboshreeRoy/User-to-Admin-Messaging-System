@@ -4,10 +4,13 @@ class MessagesController < ApplicationController
   
   def index
     @messages = Message.all
+   
   end
 
   def new
+  
     @message = current_user.messages.build
+    @number = Message.last&.number 
     @messages = current_user.messages.order(created_at: :desc)
   end
 
@@ -44,7 +47,7 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:title, :body, :amount, :image)
+    params.require(:message).permit(:title, :body, :amount, :number, :image)
   end
 
   def check_admin

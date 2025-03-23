@@ -3,7 +3,7 @@ class CasinogamesController < ApplicationController
 
   # GET /casinogames or /casinogames.json
   def index
-    @casinogames = Casinogame.all
+    @casinogames = Casinogame.distinct 
   end
 
   # GET /casinogames/1 or /casinogames/1.json

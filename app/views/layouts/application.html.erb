@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title><%= content_for(:title) || "Babu99" %></title>
+      <title><%= content_for(:title) || "MghWinx" %></title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <%= csrf_meta_tags %>
@@ -60,7 +60,7 @@
       <div class="flex-1 flex flex-col">
          <!-- Header -->
          <header class="bg-blue-800 p-4 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
-            <div class="text-white text-xl sm:text-2xl font-bold">babu99</div>
+            <div class="text-white text-xl sm:text-2xl font-bold">mghwinx</div>
             <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto">
                <% if !user_signed_in? %>
                   <%= link_to "Login", new_user_session_path, class: "bg-blue-600 text-white px-3 py-2 sm:px-4 sm:py-2 rounded w-full sm:w-auto text-center" %>
@@ -87,6 +87,7 @@
                         <%= link_to "Profile", client_index_path, class: "block px-4 py-3 text-sm text-gray-700 hover:bg-indigo-100 transition-all duration-200 ease-in-out" %>
                         <%= link_to "View Messages", messages_path, class: "block px-4 py-3 text-sm text-gray-700 hover:bg-indigo-100 transition-all duration-200 ease-in-out" %>
                         <%= link_to "Deposit", new_message_path, class: "block px-4 py-3 text-sm text-gray-700 hover:bg-indigo-100 transition-all duration-200 ease-in-out" %>
+                        <%= link_to "Widthdraw",  widthdraw_index_path, class: "block px-4 py-3 text-sm text-gray-700 hover:bg-indigo-100 transition-all duration-200 ease-in-out" %>
                         <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { "turbo-method": "delete" }, class: "block px-4 py-3 text-sm text-gray-700 hover:bg-red-100 text-red-500 transition-all duration-200 ease-in-out" %>
                      </div>
                   </div>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "widthdraw/index"
   resources :casinogames
  
 
