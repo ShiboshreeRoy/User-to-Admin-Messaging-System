@@ -1,11 +1,10 @@
 <!-- Banner -->
-<div class="p-4">
-   <img
-      alt="Banner with motorcycles and electronics"
-      class="w-full h-[105px] rounded"
-      src="https://i.ibb.co.com/JW2FtsQW/win-fast.png"
-      />
+<div class="p-4 relative">
+   <div class="overflow-hidden relative w-full h-[350px] rounded">
+       <img id="slider" class="w-full h-[350px]  object-cover rounded transition-opacity duration-500" />
+   </div>
 </div>
+
 <!-- Navigation Tabs -->
 <div class="flex justify-center space-x-4 bg-white p-4 overflow-x-auto">
    <%= link_to"SPORTS",casinogames_path,class: "text-blue-800 font-bold whitespace-nowrap"%>
@@ -85,3 +84,26 @@
    </div>
    </div>
 </body>
+
+<script>
+const images = [
+    "https://i.ibb.co.com/JW2FtsQW/win-fast.png",
+    "https://i.ibb.co.com/Gf5p98J0/win-one.png",
+    "https://i.ibb.co.com/N6KR5tNt/win-two.png"
+];
+
+let currentIndex = 0;
+const slider = document.getElementById("slider");
+
+function changeImage() {
+    slider.style.opacity = 0;
+    setTimeout(() => {
+        slider.src = images[currentIndex];
+        slider.style.opacity = 1;
+        currentIndex = (currentIndex + 1) % images.length;
+    }, 500);
+}
+
+slider.src = images[currentIndex];
+setInterval(changeImage, 6000);
+</script>

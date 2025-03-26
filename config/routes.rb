@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :messages, only: [:new, :create, :index, :destroy, :show] do
     member do
        get 'update_status'
+       get :download_image
     end
   end
 

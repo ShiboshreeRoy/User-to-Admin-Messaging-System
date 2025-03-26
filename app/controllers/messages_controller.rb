@@ -41,6 +41,15 @@ class MessagesController < ApplicationController
     end
   end
 
+  def download_image
+    @message = Message.find(params[:id])
+    if @message.image.attached?
+      redirect_to rails_blob_url(@message.image, disposition: 'attachment')
+    else
+      redirect_to messages_path, alert: 'No image available for download.'
+    end
+  end
+  
   def destroy
     @message = Message.find(params[:id])
     if @message.destroy
