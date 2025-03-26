@@ -12,7 +12,10 @@
   <% end %>
 
   <div class="mt-6 flex justify-between">
-    <%= link_to "Back", messages_path, class: "text-blue-500 hover:underline" %>
-    <%= link_to "Delete", message_path(@message), method: :delete, data: { confirm: "Are you sure?" }, class: "text-red-500 hover:underline" %>
+    <%= link_to "Back", messages_path, class: "text-white bg-black px-4  py-2 hover:underline" %>
+    <%= link_to "Delete", message_path(@message), method: :delete, data: {turbo_method: :delete, confirm: "Are you sure?" }, class: "text-white px-4 py-2 bg-red-500 hover:underline" %>
   </div>
 </div>
+
+
+

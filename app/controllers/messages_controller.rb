@@ -16,6 +16,11 @@ class MessagesController < ApplicationController
   end
 
   def show
+    @message = Message.find_by(id: params[:id])
+    unless @message
+      flash[:alert] = "Message not found."
+      redirect_to messages_path
+    end
   end
   
   def create
