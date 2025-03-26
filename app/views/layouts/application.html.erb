@@ -12,6 +12,7 @@
       <link rel="icon" href="/icon.svg" type="image/svg+xml">
       <link rel="apple-touch-icon" href="/icon.png">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
       <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
       <%= javascript_importmap_tags %>
    </head>
@@ -66,7 +67,13 @@
                   <%= link_to "Login", new_user_session_path, class: "bg-blue-600 text-white px-3 py-2 sm:px-4 sm:py-2 rounded w-full sm:w-auto text-center" %>
                   <%= link_to "Sign up", new_user_registration_path, class: "bg-green-500 text-white px-3 py-2 sm:px-4 sm:py-2 rounded w-full sm:w-auto text-center" %>
                <% else %>
-                  <span class="text-white text-sm sm:text-base px-3 py-2 rounded bg-blue-700 w-full sm:w-auto text-center">Balance: <%= @amount %></span>
+                  <span class="text-white text-sm sm:text-base px-3 py-2 rounded bg-blue-700 w-full sm:w-auto text-center">Balance: 
+                  <% if @amount.present?%>
+                  <%= @amount %>
+                  <% else%>
+                  00.00
+                  <% end %>
+                  </span>
                   <%= link_to "Deposit", new_message_path, class: "bg-green-500 text-white px-3 py-2 sm:px-4 sm:py-2 rounded w-full sm:w-auto text-center" %>
                   <!-- Dropdown Button -->
                   <div class="relative w-full sm:w-auto">
@@ -106,8 +113,7 @@
          </main>
       </div>
 
-      <!-- Tailwind Script (for development only, remove in production if using pre-built CSS) -->
-      <script src="https://cdn.tailwindcss.com"></script>
+      
       <!-- Dropdown Script -->
       <script>
          const button = document.getElementById("dropdownButton");

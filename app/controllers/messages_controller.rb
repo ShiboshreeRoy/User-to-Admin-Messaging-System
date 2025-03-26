@@ -11,6 +11,7 @@ class MessagesController < ApplicationController
   
     @message = current_user.messages.build
     @number = Message.last&.number 
+    @local_number = '01810395960'
     @messages = current_user.messages.order(created_at: :desc)
   end
 
