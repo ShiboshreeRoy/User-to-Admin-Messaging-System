@@ -1,9 +1,9 @@
-<%= form_with(model: casinogame) do |form| %>
+<%= form_with(model: casinogame, class: "max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg") do |form| %>
+  
   <% if casinogame.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(casinogame.errors.count, "error") %> prohibited this casinogame from being saved:</h2>
-
-      <ul>
+    <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4">
+      <h2 class="font-bold"><%= pluralize(casinogame.errors.count, "error") %> prohibited this casinogame from being saved:</h2>
+      <ul class="mt-2 list-disc list-inside">
         <% casinogame.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
@@ -11,22 +11,27 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <!-- Title Field -->
+  <div class="mb-4">
+    <%= form.label :title, class: "block text-gray-700 font-bold mb-2" %>
+    <%= form.text_field :title, class: "w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500" %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
-   <div>
-    <%= form.label :image, style: "display: block" %>
-    <%= form.file_field:image %>
+  <!-- Description Field -->
+  <div class="mb-4">
+    <%= form.label :Game_Url, class: "block text-gray-700 font-bold mb-2" %>
+    <%= form.text_area :description, rows: 4, class: "w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500" %>
   </div>
 
-  
-  <div>
-    <%= form.submit %>
+  <!-- Image Upload -->
+  <div class="mb-4">
+    <%= form.label :image, class: "block text-gray-700 font-bold mb-2" %>
+    <%= form.file_field :image, class: "w-full p-2 border rounded-lg shadow-sm bg-gray-100" %>
   </div>
+
+  <!-- Submit Button -->
+  <div class="mt-6">
+    <%= form.submit "Save Casino Game", class: "w-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-bold py-3 rounded-lg shadow-md hover:from-blue-600 hover:to-indigo-600 transition-transform transform hover:scale-105" %>
+  </div>
+
 <% end %>

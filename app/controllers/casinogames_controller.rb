@@ -8,6 +8,8 @@ class CasinogamesController < ApplicationController
 
   # GET /casinogames/1 or /casinogames/1.json
   def show
+    @casinogame = Casinogame.find(params[:id])
+  @casinogames = Casinogame.all
   end
 
   # GET /casinogames/new

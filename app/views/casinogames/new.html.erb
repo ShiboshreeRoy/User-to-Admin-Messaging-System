@@ -1,11 +1,13 @@
-<% content_for :title, "New casinogame" %>
+<% content_for :title, "New Casino Game" %>
 
-<h1>New casinogame</h1>
+<div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 p-6">
+  <div class="max-w-2xl w-full bg-white p-8 rounded-2xl shadow-2xl transform transition-all hover:shadow-3xl">
+    <h1 class="text-4xl font-extrabold text-gray-900 mb-6 text-center">🎰 Create a New Casino Game 🎲</h1>
 
-<%= render "form", casinogame: @casinogame %>
+    <%= render "form", casinogame: @casinogame %>
 
-<br>
-
-<div>
-  <%= link_to "Back to casinogames", casinogames_path %>
+    <div class="mt-6 text-center">
+      <%= link_to "⬅ Back to Casino Games", casinogames_path, class: "text-blue-600 hover:underline font-semibold hover:text-blue-800 transition duration-200" %>
+    </div>
+  </div>
 </div>

@@ -1,12 +1,12 @@
-<% content_for :title, "Editing casinogame" %>
+<% content_for :title, "Editing Casino Game" %>
 
-<h1>Editing casinogame</h1>
+<div class="max-w-2xl mx-auto mt-10 bg-white p-8 rounded-lg shadow-xl">
+  <h1 class="text-3xl font-bold text-gray-900 mb-6 text-center">✏️ Edit Casino Game</h1>
 
-<%= render "form", casinogame: @casinogame %>
+  <%= render "form", casinogame: @casinogame %>
 
-<br>
-
-<div>
-  <%= link_to "Show this casinogame", @casinogame %> |
-  <%= link_to "Back to casinogames", casinogames_path %>
+  <div class="mt-6 flex justify-between">
+    <%= link_to "⬅ Back to Casino Games", casinogames_path, class: "text-blue-500 hover:underline font-semibold hover:text-blue-700" %>
+    <%= link_to "👁 View Game", @casinogame, class: "text-green-500 hover:underline font-semibold hover:text-green-700" %>
+  </div>
 </div>
