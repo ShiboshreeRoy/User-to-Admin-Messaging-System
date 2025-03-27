@@ -1,5 +1,5 @@
 databases:
-  - name: mysite
+  - name: royalwinner
     databaseName: mysite
     user: mysite
     plan: free
