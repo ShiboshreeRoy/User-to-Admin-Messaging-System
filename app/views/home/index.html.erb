@@ -1,60 +1,218 @@
 <!-- Banner -->
 <div class="p-4 relative">
    <div class="overflow-hidden relative w-full h-[355px] rounded">
-       <img id="slider" class="w-full h-[355px]  object-cover rounded transition-opacity duration-500" />
+      <img id="slider" class="w-full h-[355px]  object-cover rounded transition-opacity duration-500" />
    </div>
 </div>
-
 <!-- Navigation Tabs -->
+<% if user_signed_in? %>
 <div class="flex justify-center space-x-4 bg-white p-4 overflow-x-auto">
    <%= link_to"SPORTS",casinogames_path,class: "text-blue-800 font-bold whitespace-nowrap"%>
-   <a class="text-gray-600 whitespace-nowrap" href="#">CASINO</a>
-   <a class="text-gray-600 whitespace-nowrap" href="#">SLOTS</a>
-   <a class="text-gray-600 whitespace-nowrap" href="#">TABLE</a>
-   <a class="text-gray-600 whitespace-nowrap" href="#">CRASH</a>
-   <a class="text-gray-600 whitespace-nowrap" href="#">FISHING</a>
-   <a class="text-gray-600 whitespace-nowrap" href="#">ARCADE</a>
-   <a class="text-gray-600 whitespace-nowrap" href="#">LOTTERY</a>
+   <%= link_to"CASINO",casinogames_path,class: "text-blue-800 font-bold whitespace-nowrap"%>
+   <%= link_to"SLOTS",casinogames_path,class: "text-blue-800 font-bold whitespace-nowrap"%>
+   <%= link_to"TABLE",casinogames_path,class: "text-blue-800 font-bold whitespace-nowrap"%>
+   <%= link_to"CASH",casinogames_path,class: "text-blue-800 font-bold whitespace-nowrap"%>
+   <%= link_to"FISHING",casinogames_path,class: "text-blue-800 font-bold whitespace-nowrap"%>
+   <%= link_to"ARCADE",casinogames_path,class: "text-blue-800 font-bold whitespace-nowrap"%>
+   <%= link_to"SPORTS",casinogames_path,class: "text-blue-800 font-bold whitespace-nowrap"%>
+   <%= link_to"LOTTERY",casinogames_path,class: "text-blue-800 font-bold whitespace-nowrap"%>
 </div>
+<% else %>
+<div class="flex justify-center space-x-4 bg-white p-4 overflow-x-auto">
+   <%= link_to"SPORTS",new_user_registration_path,class: "text-blue-800 font-bold whitespace-nowrap"%>
+   <%= link_to"CASINO",new_user_registration_path,class: "text-blue-800 font-bold whitespace-nowrap"%>
+   <%= link_to"SLOTS",new_user_registration_path,class: "text-blue-800 font-bold whitespace-nowrap"%>
+   <%= link_to"TABLE",new_user_registration_path,class: "text-blue-800 font-bold whitespace-nowrap"%>
+   <%= link_to"CASH",new_user_registration_path,class: "text-blue-800 font-bold whitespace-nowrap"%>
+   <%= link_to"FISHING",new_user_registration_path,class: "text-blue-800 font-bold whitespace-nowrap"%>
+   <%= link_to"ARCADE",new_user_registration_path,class: "text-blue-800 font-bold whitespace-nowrap"%>
+   <%= link_to"SPORTS",new_user_registration_path,class: "text-blue-800 font-bold whitespace-nowrap"%>
+   <%= link_to"LOTTERY",new_user_registration_path,class: "text-blue-800 font-bold whitespace-nowrap"%>
+</div>
+<% end %>
 <body class="bg-gray-100">
    <!-- Sports Section -->
-   <div class="p-4">
-      <h2 class="text-blue-800 font-bold">SPORTS</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
-         <div class="bg-white p-4 rounded shadow text-center">
-            <img alt="Cricket icon" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/fnYaHyRZJQnux9umB_uuDR7Naqq0TWAsSMjmGppJgBA.jpg" width="100"/>
-            <p>CRICKET</p>
+   <div class="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 p-6">
+      <h2 class="text-3xl font-bold text-gold-500 mb-8 uppercase tracking-wider text-center">
+         Featured Casino Games
+      </h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+         <!-- Fast Pub -->
+         <div class="group relative overflow-hidden rounded-xl shadow-2xl transition-transform duration-300 hover:-translate-y-2">
+            <div class="relative aspect-square bg-black/20">
+               <img 
+                  alt="Fast Pub Casino Game" 
+                  class="w-full h-full object-cover"
+                  src="https://i.ibb.co.com/0RPB1d16/Fast-Pub.png"
+                  loading="lazy"
+                  >
+               <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <button class="casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md">
+                  ▶ Play Now
+                  </button>
+               </div>
+            </div>
+            <div class="absolute top-2 right-2 casino-chip-label">
+               NEW
+            </div>
+            <div class="bg-gradient-to-r from-casino-blue to-casino-purple p-4">
+               <p class="text-white font-bold text-lg text-center truncate tracking-wide">FAST PUB</p>
+            </div>
          </div>
-         <div class="bg-white p-4 rounded shadow text-center">
-            <img alt="Saba icon" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/N8-mFkmpONTSC3ZQmhyWSt6XGxym_9wCneI8RPj9O5M.jpg" width="100"/>
-            <p>SABA</p>
+         <!-- Chicken Road -->
+         <div class="group relative overflow-hidden rounded-xl shadow-2xl transition-transform duration-300 hover:-translate-y-2">
+            <div class="relative aspect-square bg-black/20">
+               <img 
+                  alt="Chicken Road Slot Game" 
+                  class="w-full h-full object-cover"
+                  src="https://i.ibb.co.com/jPx8jW2g/Chicken-Road.png"
+                  loading="lazy"
+                  >
+               <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <button class="casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md">
+                  ▶ Play Now
+                  </button>
+               </div>
+            </div>
+            <div class="bg-gradient-to-r from-casino-blue to-casino-purple p-4">
+               <p class="text-white font-bold text-lg text-center truncate tracking-wide">CHICKEN ROAD</p>
+            </div>
          </div>
-         <div class="bg-white p-4 rounded shadow text-center">
-            <img alt="BTi icon" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/XSCtai-cqc0bBaBtaC_S1BaGh_qNwt_e4V3Sh2R6ImM.jpg" width="100"/>
-            <p>BTi</p>
+         <!-- Jili Crazy777 -->
+         <div class="group relative overflow-hidden rounded-xl shadow-2xl transition-transform duration-300 hover:-translate-y-2">
+            <div class="relative aspect-square bg-black/20">
+               <img 
+                  alt="Jili Crazy 777 Slot Machine" 
+                  class="w-full h-full object-cover"
+                  src="https://i.ibb.co.com/93kNW14K/JILI-Crazy777.png"
+                  loading="lazy"
+                  >
+               <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <button class="casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md">
+                  ▶ Play Now
+                  </button>
+               </div>
+            </div>
+            <div class="bg-gradient-to-r from-casino-blue to-casino-purple p-4">
+               <p class="text-white font-bold text-lg text-center truncate tracking-wide">JILI CRAZY777</p>
+            </div>
          </div>
-         <div class="bg-white p-4 rounded shadow text-center">
-            <img alt="SV388 icon" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/OR1JilAMOXx9SF8ry5d7moomGYKK3Gm8cC_qEI0gLBA.jpg" width="100"/>
-            <p>SV388</p>
+         <!-- Jili Super Ace -->
+         <div class="group relative overflow-hidden rounded-xl shadow-2xl transition-transform duration-300 hover:-translate-y-2">
+            <div class="relative aspect-square bg-black/20">
+               <img 
+                  alt="Jili Super Ace Card Game" 
+                  class="w-full h-full object-cover"
+                  src="https://i.ibb.co.com/Y75yv1VB/JILI-Super-Ace.jpg"
+                  loading="lazy"
+                  >
+               <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <button class="casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md">
+                  ▶ Play Now
+                  </button>
+               </div>
+            </div>
+            <div class="absolute top-2 right-2 casino-chip-label">
+               HOT
+            </div>
+            <div class="bg-gradient-to-r from-casino-blue to-casino-purple p-4">
+               <p class="text-white font-bold text-lg text-center truncate tracking-wide">JILI SUPER ACE</p>
+            </div>
          </div>
-         <div class="bg-white p-4 rounded shadow text-center">
-            <img alt="SBO icon" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/Batb0Sg6P5nCglCqfJ1IRYJrsV4v9E8Wncbb9rw2vn0.jpg" width="100"/>
-            <p>SBO</p>
+         <!-- PG Flirting Scholar -->
+         <div class="group relative overflow-hidden rounded-xl shadow-2xl transition-transform duration-300 hover:-translate-y-2">
+            <div class="relative aspect-square bg-black/20">
+               <img 
+                  alt="PG Flirting Scholar Game" 
+                  class="w-full h-full object-cover"
+                  src="https://i.ibb.co.com/tpZHrZx0/PG-Flirting-Scholar.jpg"
+                  loading="lazy"
+                  >
+               <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <button class="casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md">
+                  ▶ Play Now
+                  </button>
+               </div>
+            </div>
+            <div class="bg-gradient-to-r from-casino-blue to-casino-purple p-4">
+               <p class="text-white font-bold text-lg text-center truncate tracking-wide">PG FLIRTING SCHOLAR</p>
+            </div>
          </div>
-         <div class="bg-white p-4 rounded shadow text-center">
-            <img alt="Horse icon" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/P71YkPPGO9PMLXoGXbMeMmFFVhEwsQdkWvp9-Nvo-Lk.jpg" width="100"/>
-            <p>HORSE</p>
+         <!-- PG Legend of Perse -->
+         <div class="group relative overflow-hidden rounded-xl shadow-2xl transition-transform duration-300 hover:-translate-y-2">
+            <div class="relative aspect-square bg-black/20">
+               <img 
+                  alt="PG Legend of Perse Adventure Game" 
+                  class="w-full h-full object-cover"
+                  src="https://i.ibb.co.com/Z6ndgKMy/PG-Legend-of-Perse.jpg"
+                  loading="lazy"
+                  >
+               <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <button class="casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md">
+                  ▶ Play Now
+                  </button>
+               </div>
+            </div>
+            <div class="bg-gradient-to-r from-casino-blue to-casino-purple p-4">
+               <p class="text-white font-bold text-lg text-center truncate tracking-wide">PG LEGEND OF PERSE</p>
+            </div>
          </div>
-         <div class="bg-white p-4 rounded shadow text-center">
-            <img alt="CMD icon" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/vxKig0FxIF_vmkA03SzB4Ztjb1lH1M2MDyaHJ1ahCnc.jpg" width="100"/>
-            <p>CMD</p>
+         <!-- Tower X -->
+         <div class="group relative overflow-hidden rounded-xl shadow-2xl transition-transform duration-300 hover:-translate-y-2">
+            <div class="relative aspect-square bg-black/20">
+               <img 
+                  alt="Tower X Casino Game" 
+                  class="w-full h-full object-cover"
+                  src="https://i.ibb.co.com/VYGyMRY7/Tower-X.webp"
+                  loading="lazy"
+                  >
+               <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <button class="casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md">
+                  ▶ Play Now
+                  </button>
+               </div>
+            </div>
+            <div class="bg-gradient-to-r from-casino-blue to-casino-purple p-4">
+               <p class="text-white font-bold text-lg text-center truncate tracking-wide">TOWER X</p>
+            </div>
          </div>
-         <div class="bg-white p-4 rounded shadow text-center">
-            <img alt="Pinnacle icon" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/HzmXga5mRhQn7FZ6ZAvSNMc86jumabs69rU6e7wKBOo.jpg" width="100"/>
-            <p>PINNACLE</p>
+         <!-- Wild Bounty Showdown -->
+         <div class="group relative overflow-hidden rounded-xl shadow-2xl transition-transform duration-300 hover:-translate-y-2">
+            <div class="relative aspect-square bg-black/20">
+               <img 
+                  alt="Wild Bounty Showdown Slot" 
+                  class="w-full h-full object-cover"
+                  src="https://i.ibb.co.com/svTnDGPw/Wild-Bounty-Showdown.jpg"
+                  loading="lazy"
+                  >
+               <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <button class="casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md">
+                  ▶ Play Now
+                  </button>
+               </div>
+            </div>
+            <div class="absolute top-2 right-2 casino-chip-label">
+               POPULAR
+            </div>
+            <div class="bg-gradient-to-r from-casino-blue to-casino-purple p-4">
+               <p class="text-white font-bold text-lg text-center truncate tracking-wide">WILD BOUNTY SHOWDOWN</p>
+            </div>
          </div>
       </div>
    </div>
+   <style>
+      .casino-play-button {
+      @apply bg-gold-500 hover:bg-gold-600 text-black px-8 py-3 rounded-full font-bold uppercase tracking-wider transform transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl;
+      }
+      .casino-chip-label {
+      @apply bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide shadow-md;
+      }
+      .text-gold-500 { color: #FFD700; }
+      .bg-gold-500 { background-color: #FFD700; }
+      .hover\:bg-gold-600:hover { background-color: #FFC400; }
+      .from-casino-blue { --tw-gradient-from: #1a365d; }
+      .to-casino-purple { --tw-gradient-to: #4a235a; }
+   </style>
    <!-- Favourites Section -->
    <div class="p-4">
       <h2 class="text-blue-800 font-bold">Favourites</h2>
@@ -84,26 +242,25 @@
    </div>
    </div>
 </body>
-
 <script>
-const images = [
-    "https://i.ibb.co.com/JW2FtsQW/win-fast.png",
-    "https://i.ibb.co.com/Gf5p98J0/win-one.png",
-    "https://i.ibb.co.com/N6KR5tNt/win-two.png"
-];
-
-let currentIndex = 0;
-const slider = document.getElementById("slider");
-
-function changeImage() {
-    slider.style.opacity = 0;
-    setTimeout(() => {
-        slider.src = images[currentIndex];
-        slider.style.opacity = 1;
-        currentIndex = (currentIndex + 1) % images.length;
-    }, 500);
-}
-
-slider.src = images[currentIndex];
-setInterval(changeImage, 6000);
+   const images = [
+       "https://i.ibb.co.com/JW2FtsQW/win-fast.png",
+       "https://i.ibb.co.com/Gf5p98J0/win-one.png",
+       "https://i.ibb.co.com/N6KR5tNt/win-two.png"
+   ];
+   
+   let currentIndex = 0;
+   const slider = document.getElementById("slider");
+   
+   function changeImage() {
+       slider.style.opacity = 0;
+       setTimeout(() => {
+           slider.src = images[currentIndex];
+           slider.style.opacity = 1;
+           currentIndex = (currentIndex + 1) % images.length;
+       }, 500);
+   }
+   
+   slider.src = images[currentIndex];
+   setInterval(changeImage, 6000);
 </script>

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title><%= content_for(:title) || "MghWinx" %></title>
+      <title><%= content_for(:title) || "Royal Winner" %></title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <%= csrf_meta_tags %>
       <%= csp_meta_tag %>
       <%= yield :head %>
       <link rel="manifest" href="/manifest.json">
-      <link rel="icon" href="/icon.png" type="image/png">
-      <link rel="icon" href="/icon.svg" type="image/svg+xml">
-      <link rel="apple-touch-icon" href="/icon.png">
+      <link rel="icon" href="https://i.ibb.co.com/CspDT4q1/Royel-Winner.png" type="image/png">
+      <link rel="icon" href="https://i.ibb.co.com/CspDT4q1/Royel-Winner.png" type="image/svg+xml">
+      <link rel="apple-touch-icon" href="https://i.ibb.co.com/CspDT4q1/Royel-Winner.png">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
       <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css", media: "all" %>
 
@@ -60,7 +60,7 @@
       <div class="flex-1 flex flex-col">
          <!-- Header -->
          <header class="bg-blue-800 p-4 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
-            <div class="text-white text-xl sm:text-2xl font-bold">mghwinx</div>
+            <div class="text-white text-xl sm:text-2xl font-bold">Royal Winner</div>
             <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto">
                <% if !user_signed_in? %>
                <%= link_to "Login", new_user_session_path, class: "bg-blue-600 text-white px-3 py-2 sm:px-4 sm:py-2 rounded w-full sm:w-auto text-center" %>

@@ -113,6 +113,7 @@ end
 ```
 
 ### 7. Update Views
+
 #### User Message Form (`app/views/messages/new.html.erb`)
 ```erb
 <%= form_with(model: @message, local: true, html: { id: 'message_form' }) do |form| %>
