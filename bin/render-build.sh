@@ -9,5 +9,4 @@ bundle exec rails assets:clean
 # If you're using a Free instance type, you need to
 # perform database migrations in the build command.
 # Uncomment the following line if needed:
-bundle exec rails db:migrate
-bundle exec rails db:seed
+##bundle exec rails db:seed
